@@ -7,7 +7,8 @@ module.exports = {
   mode:'development',
   devtool: 'inline-source-map',
   devServer: {
-      contentBase: './dist'
+      contentBase: './dist',
+      hot:true
   },
   entry: {
     index:'./src/index.js'
@@ -16,6 +17,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: { extensions: [".ts", ".tsx", ".js", ".jsx"] },
   module:{
     rules:[
       {test: /\.css$/, use: ['style-loader','css-loader']},
@@ -48,7 +50,7 @@ module.exports = {
   },
   plugins:[
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({title:'react framework'}),
+    new HtmlWebpackPlugin({template:'./src/index.html'}),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin()
