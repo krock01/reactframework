@@ -17,12 +17,12 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  resolve: { extensions: [".ts", ".tsx", ".js", ".jsx"] },
+  resolve: { extensions: [".js", ".jsx"] },
   module:{
     rules:[
       {test: /\.css$/, use: ['style-loader','css-loader']},
       {
-        test: /\.(j|t)sx?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -34,7 +34,7 @@ module.exports = {
                 "@babel/preset-env",
                 { targets: { browsers: "last 2 versions" } } // or whatever your project requires
               ],
-              "@babel/preset-typescript",
+              // "@babel/preset-typescript",
               "@babel/preset-react"
             ],
             plugins: [

@@ -6,7 +6,6 @@ export default class App extends Component{
     return (
       <div>
         <HelloMessage name="krock" />
-        <HelloMessage name="jack" />
       </div>
     )
   }
