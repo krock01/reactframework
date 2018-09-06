@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn remove @types/React
+  /usr/local/bin/node /usr/local/bin/yarn start
 
 PATH: 
   /Users/krock/Library/Android/android-sdk-macosx//tools:/Users/krock/Library/Android/android-sdk-macosx//platform-tools:/Users/krock/Library/Android/android-sdk-macosx/:/Users/krock/Library/Android/android-ndk-r9d/:/Users/krock/Documents/web/cocos2d/apache-ant-1.10.1/bin:/Users/krock/Documents/web/cocos2d/cocos2d-x-3.14.1/templates:/Users/krock/Documents/web/cocos2d:/Users/krock/Documents/web/cocos2d/cocos2d-x-3.14.1/tools/cocos2d-console/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/krock/Library/Android/android-sdk-macosx//tools:/Users/krock/Library/Android/android-sdk-macosx//platform-tools:/Users/krock/Library/Android/android-sdk-macosx/:/Users/krock/Library/Android/android-ndk-r9d/:/Users/krock/Documents/web/cocos2d/apache-ant-1.10.1/bin:/Users/krock/Documents/web/cocos2d/cocos2d-x-3.14.1/templates:/Users/krock/Documents/web/cocos2d:/Users/krock/Documents/web/cocos2d/cocos2d-x-3.14.1/tools/cocos2d-console/bin:/usr/local/mysql/bin:/usr/local/mysql/bin
@@ -4707,10 +4707,17 @@ Lockfile:
       yargs-parser "^10.1.0"
 
 Trace: 
-  Error: This module isn't specified in a manifest.
-      at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
-      at Object.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:60445:15)
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:109:13
-      at <anonymous>
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c webpack-dev-server
+  Directory: /Users/krock/Documents/web/react/reactframework
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
