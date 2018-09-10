@@ -3,17 +3,21 @@ import React from 'react';
 class Search extends React.Component{
     constructor(){
         super();
-        this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
     }
-    handleChange(event){
-        console.log(this.input.value);
-        console.log(event.target.value);
+    handleClick(){
+        this.props.searchClick(this.input.value);
+    }
+    handleAdd(){
+        this.props.add(this.input.value);
     }
     render(){
         return (
             <div className="search-input">
-                <input type="text" ref={input=>{this.input=input}} onChange={this.handleChange}/>
-                <button onClick={this.props.searchClick(this.input.value)}>查询</button>
+                <input type="text" ref={input=>{this.input=input}} />
+                <button onClick={this.handleClick}>查询</button>
+                <button onClick={this.handleAdd}>添加</button>
             </div>
         )
     }

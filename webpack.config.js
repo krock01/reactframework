@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 module.exports = {
@@ -17,7 +16,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  resolve: { extensions: [".ts", ".tsx", ".js", ".jsx"] },
+  resolve: { extensions: [ ".js", ".jsx"] },
   module:{
     rules:[
       {test: /\.css$/, use: ['style-loader','css-loader']},
@@ -34,7 +33,6 @@ module.exports = {
                 "@babel/preset-env",
                 { targets: { browsers: "last 2 versions" } } // or whatever your project requires
               ],
-              "@babel/preset-typescript",
               "@babel/preset-react"
             ],
             plugins: [
@@ -52,7 +50,6 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({template:'./src/index.html'}),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new ForkTsCheckerWebpackPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
