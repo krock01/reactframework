@@ -19,7 +19,11 @@ module.exports = {
   resolve: { extensions: [ ".js", ".jsx"] },
   module:{
     rules:[
-      {test: /\.css$/, use: ['style-loader','css-loader']},
+      {test: /\.css$/, use: ['style-loader','css-loader','postcss-loader']},
+      {
+        test:/\.(sass|scss)$/,
+        use:['style-loader','css-loader','sass-loader']
+      },
       {
         test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
