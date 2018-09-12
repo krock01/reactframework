@@ -11,6 +11,7 @@ class Search extends React.Component{
     }
     handleAdd(){
         this.props.add(this.input.value);
+        this.input.value = '';
     }
     render(){
         return (
